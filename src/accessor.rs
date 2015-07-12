@@ -26,6 +26,15 @@ macro_rules! setter {
 }
 
 #[macro_export]
+macro_rules! field_setter {
+    ( $($name:ident, $set_name:ident, $name_type:ident ),+ ) => {
+        $(
+            setter!($ident, $set_name, $name_type);
+            )+
+    }
+}
+
+#[macro_export]
 macro_rules! ref_getter {
     ( $name:ident, $name_type:ident ) => {
         pub fn $name(&self) -> &$name_type {
