@@ -7,6 +7,7 @@ macro_rules! getter {
     }
 }
 
+#[macro_export]
 macro_rules! field_getter {
     ( $($name:ident, $name_type:ident),+ ) => {
         $(
@@ -15,6 +16,7 @@ macro_rules! field_getter {
     }
 }
 
+#[macro_export]
 macro_rules! setter {
     ( $name:ident, $set_name:ident, $name_type:ident ) => {
         pub fn $set_name(&mut self, to_set: $name_type) {
@@ -23,6 +25,7 @@ macro_rules! setter {
     }
 }
 
+#[macro_export]
 macro_rules! ref_getter {
     ( $name:ident, $name_type:ident ) => {
         pub fn $name(&self) -> &$name_type {

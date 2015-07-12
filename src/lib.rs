@@ -1,5 +1,2 @@
+#[macro_use]
 pub mod accessor;
-
-#[test]
-fn it_works() {
-}
